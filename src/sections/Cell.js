@@ -57,7 +57,7 @@ const Cell = ({
 
     const hasFloatedStyles = isEditPanelFloated ? 
         'absolute left-0 top-1/2 transform -translate-y-1/2 shadow-xl rounded-lg min-h-full min-w-full px-4 bg-white z-10' : 
-        'relative';
+        '';
 
     return (
         <th
