@@ -1,0 +1,57 @@
+.text-field {
+    flex-grow: 1;
+    position: relative;
+}
+
+.text-field__input {
+    border-radius: 8px;
+    border: 1px solid #101D46;
+    box-sizing: border-box;
+    height: 32px;
+    padding-left: 12px;
+    padding-right: 44px;
+    min-width: 100%;
+}
+
+.text-field__input_invalid {
+    border: 1px solid #CD2B31;
+    padding-right: 68px;
+}
+
+.text-field__input_invalid:focus {
+    outline: #CD2B31 auto 2px;
+}
+
+.text-field__actions {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    position: absolute;
+    right: 8px;
+    top: 4px;
+}
+
+.text-field__delete-button, .text-field__warning-button {
+    background: #FFFFFF;
+    border-radius: 4px;
+    padding: 0;
+    height: 24px;
+    width: 24px;
+    min-width: 0;
+    max-width: 24px;
+}
+
+.text-field__error-text-popup {
+    background: #FFFFFF;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    color: #CD2B31;
+    font-weight: 500;
+    padding: 4px 12px;
+    position: absolute;
+    left: 0;
+    bottom: calc(100% + 4px);
+    width: 100%;
+}
+
