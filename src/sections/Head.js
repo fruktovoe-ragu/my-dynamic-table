@@ -41,7 +41,7 @@ const Head = ({
             onCancelClick={() => setEditModeIndex(null)}
           >
             <>
-                <p className="text-left cursor-default">{title}</p>
+                <p className="text-left cursor-default break-all">{title}</p>
                 <Menu
                   order={index}
                   className="absolute right-4 top-1/2 transform -translate-y-1/2"

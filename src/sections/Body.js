@@ -49,6 +49,7 @@ const Body = ({
                 className="px-2 group"
                 id={cellId}
                 content={content}
+                isEditPanelFloated
                 onSubmitClick={onSubmitEditedCellClick}
                 isEditMode={isNewRowCreated && newCellId === cellId}
                 isControlled={isNewRowCreated && newCellId === cellId}
@@ -58,7 +59,7 @@ const Body = ({
                   border border-transparent border-solid w-full rounded cursor-text min-h-9 p-2
                   group-hover:border-slate-400 transition-border duration-300
                 `}>
-                  <p className="font-normal">
+                  <p className="font-normal break-all">
                     {content}
                   </p>
                 </div>
@@ -66,7 +67,10 @@ const Body = ({
               </Cell>
             ))}
             {cellsData.length > 0 && 
-              <Cell isControlled className="px-4 py-2 group relative">
+              <Cell
+                isControlled
+                className="px-4 py-2 group relative"
+              >
                 <Menu
                   deleteItemContent='Delete row'
                   onDeleteClick={handleDeleteRowClick(rowId)}

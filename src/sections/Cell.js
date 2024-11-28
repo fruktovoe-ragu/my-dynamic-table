@@ -7,6 +7,7 @@ const Cell = ({
     id = '',
     content = '',
     colspan = 0,
+    isEditPanelFloated = false,
     isEditMode = false,
     isControlled = false,
     onSubmitClick,
@@ -54,15 +55,21 @@ const Cell = ({
         setIsEditModeState(false);
     };
 
+    const hasFloatedStyles = isEditPanelFloated ? 
+        'absolute left-0 top-1/2 transform -translate-y-1/2 shadow-xl rounded-lg min-h-full min-w-full px-4 bg-white z-10' : 
+        'relative';
+
     return (
         <th
-            className={`py-2 relative ${className}`}
+            className={`py-2 relative max-w-60 ${className}`}
             ref={cellRef}
             colSpan={colspan}
         >
-            {children}
+            {isEditPanelFloated ? children : !isEditModeState && children}
             {isEditModeState &&
-                <div className="absolute flex left-0 top-1/2 transform -translate-y-1/2 bg-white shadow-xl rounded-lg z-10 px-4 py-2 min-w-full">
+                <div className={`
+                    ${hasFloatedStyles} flex items-center py-2
+                `}>
                     <EditPanel
                         cellId={id}
                         cellContent={content}
